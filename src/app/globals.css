@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  /* Premium Color Palette */
+  --color-black: #0a0a0a;
+  --color-charcoal: #1a1a1a;
+  --color-matte-gold: #d4af37;
+  --color-bronze: #cd7f32;
+  --color-silver: #c0c0c0;
+  --color-white: #ffffff;
+  --color-cream: #faf8f5;
+
+  /* Typography Colors */
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b6b6b;
+  --text-muted: #999999;
+
+  /* Background */
+  --background-dark: #0a0a0a;
+  --background-light: #ffffff;
+}
+
+@theme inline {
+  --color-black: var(--color-black);
+  --color-charcoal: var(--color-charcoal);
+  --color-matte-gold: var(--color-matte-gold);
+  --color-bronze: var(--color-bronze);
+  --color-silver: var(--color-silver);
+  --color-white: var(--color-white);
+  --color-cream: var(--color-cream);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: var(--background-light);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.h1-premium {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.h2-premium {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.h3-premium {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.text-premium-body {
+  font-family: var(--font-body);
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e6d3 50%, #c9a86c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle shadows */
+.shadow-soft {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-gold {
+  box-shadow: 0 8px 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Premium Borders */
+.border-premium {
+  border-color: var(--color-matte-gold);
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* Hover effects */
+.hover-lift {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transform: scale(1.02);
+}
+
+/* Image filters for editorial look */
+.img-editorial {
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-charcoal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-matte-gold);
+}
+
+/* Gold accent */
+.accent-gold {
+  color: var(--color-matte-gold);
+}
+
+/* Premium animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
